@@ -7,7 +7,7 @@ Helpers for loading images and data.
 
 import SwiftUI
 
-let productListData: [ProductListItem] = load("productListData.json")
+let productsData: [Product] = load("productsData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

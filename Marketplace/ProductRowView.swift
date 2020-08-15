@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-struct ProductListItemView: View {
+struct ProductRowView: View {
     
-    var productListItem : ProductListItem
+    var product : Product
     
     var body: some View {
         HStack {
-            Text(productListItem.name)
+            Text(product.title)
             Spacer()
-            Text("$\(productListItem.price)")
+            Text("$\(product.price)")
         }
     }
 }
 
 struct ProductListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListItemView(productListItem: productListData[0])
+        ProductRowView(product: productsData[0])
     }
 }
