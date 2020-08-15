@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     var body: some View {
-        Text("Product detail")
+        Text("Detalle del producto")
     }
 }
 

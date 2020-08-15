@@ -9,19 +9,23 @@
 import SwiftUI
 
 struct ProductListView: View {
+    @Binding var searchText : String
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Product list view")
+            Text("Lista de productos")
             
-            NavigationLink(destination: ProductListView()) {
-               Text("Navigate to Product Detail")
-            }.buttonStyle(PlainButtonStyle())
+            Text("Buscaste: \(self.searchText)")
+            
+            NavigationLink(destination: ProductDetailView()) {
+               Text("Ir al detalle del producto")
+            }.buttonStyle(DefaultButtonStyle())
         }
     }
 }
 
 struct ProductListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView()
+        ProductListView(searchText: .constant("Search example"))
     }
 }

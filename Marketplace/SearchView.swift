@@ -9,13 +9,20 @@
 import SwiftUI
 
 struct SearchView: View {
+    @Binding var text: String
+    
     var body: some View {
-        Text("Search view")
+        TextField("Buscar en Marketplace...", text: $text)
+        .padding(7)
+        .padding(.horizontal, 25)
+        .background(Color(.systemGray6))
+        .cornerRadius(20)
+        .padding(.horizontal, 10)
     }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(text: .constant(""))
     }
 }

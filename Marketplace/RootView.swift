@@ -9,14 +9,17 @@
 import SwiftUI
 
 struct RootView: View {
+    @State private var searchText : String = ""
+    
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 20) {
-                SearchView()
+            HStack(alignment: .center, spacing: 20) {
+                SearchView(text: $searchText)
                 
-                NavigationLink(destination: ProductListView()) {
-                   Text("Navigate to Product List")
-                }.buttonStyle(PlainButtonStyle())
+                NavigationLink(destination: ProductListView(searchText: $searchText)) {
+                   Text("Buscar")
+                }.buttonStyle(DefaultButtonStyle())
+                    .padding(.trailing, 20)
                 
             }
         }
