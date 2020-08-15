@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Batidora Kitchenaid Artisan",
+        "price": 49999
+    },
+    {
+        "id": 2,
+        "name": "Pava eléctrica Moulinex",
+        "price": 3999
+    },
+    {
+        "id": 3,
+        "name": "Xiaomi Mi Band 5",
+        "price": 4599
+    }
+]

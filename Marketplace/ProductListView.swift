@@ -11,15 +11,19 @@ import SwiftUI
 struct ProductListView: View {
     @Binding var searchText : String
     
+    @State var productList : Array<ProductListItem> = []
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Lista de productos")
+            Text("Mostrando resultados de: \(self.searchText)")
             
-            Text("Buscaste: \(self.searchText)")
-            
-            NavigationLink(destination: ProductDetailView()) {
-               Text("Ir al detalle del producto")
-            }.buttonStyle(DefaultButtonStyle())
+            List(productListData) { productListItem in
+                NavigationLink(destination: ProductDetailView(productId: productListItem.id)) {
+                    ProductListItemView(productListItem: productListItem)
+                }
+            }
+        }.onAppear {
+            // TODO: Fetch productos
         }
     }
 }

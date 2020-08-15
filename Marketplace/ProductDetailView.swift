@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct ProductDetailView: View {
+    
+    var productId : Int
+    
     var body: some View {
-        Text("Detalle del producto")
+        Text("Detalle del producto \(productId)")
     }
 }
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView()
+        ProductDetailView(productId: 1)
     }
 }
