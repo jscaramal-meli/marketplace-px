@@ -13,9 +13,11 @@ struct ProductDetailView: View {
     @State var product : Product
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("\(product.title)")
-            Text(product.description ?? "")
+        ScrollView(.vertical, showsIndicators: false) {
+            Text("\(self.product.title)")
+            Spacer()
+            Text(self.product.description ?? "")
+                .lineLimit(nil)
         }.onAppear(perform: loadDescription)
     }
     
