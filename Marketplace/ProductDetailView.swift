@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
-    @State var product : Product
+   @State var product : Product
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
