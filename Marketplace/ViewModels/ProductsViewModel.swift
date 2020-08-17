@@ -73,11 +73,17 @@ class ProductsViewModel : ViewModel {
             guard let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) else {
                return print ("Error decoding JSON response")
             }
+            
+            var results : [Product] = []
+            
+            for result in decodedResponse.results {
+                results.append(Product(id: result.id, title: result.title, price: result.price, stringPrice: String(format: "%.2f", result.price)))
+            }
 
             //self.state = ProductsState(products: decodedResponse.results, dataState: .loaded, searchText: searchText)
             DispatchQueue.main.async {
                 self.state.changeViewModelState(newViewModelState: .loaded)
-                self.state.changeProducts(newProducts: decodedResponse.results)
+                self.state.changeProducts(newProducts: results)
             }
         }.resume()
         

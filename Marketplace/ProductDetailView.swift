@@ -14,9 +14,21 @@ struct ProductDetailView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            Text("\(self.product.title)")
-            Spacer()
+            VStack(alignment: .leading, spacing: 8){
+                Text("\(self.product.title)")
+                    .padding(.top, 16)
+                    .padding(.bottom, 16)
+                    .font(.system(size: 40))
+                    .foregroundColor(Color.init(hex: "003459"))
+                
+                Text("$\(self.product.stringPrice ?? "0")")
+                    .padding(.bottom, 16)
+                    .font(.system(size: 36))
+                    .foregroundColor(Color.init(hex: "007EA7"))
+            }
+            
             Text(self.product.description ?? "")
+                .padding(.leading, 16)
                 .lineLimit(nil)
         }.onAppear(perform: loadDescription)
     }

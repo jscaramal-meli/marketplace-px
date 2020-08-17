@@ -16,7 +16,11 @@ struct ProductsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Mostrando resultados de: \(self.searchText)")
+            Text(self.searchText)
+                .padding(.top, 16)
+                .padding(.leading, 16)
+                .font(.system(size: 40))
+                .foregroundColor(Color.init(hex: "003459"))
             
             List(self.viewModel.state.products) { product in
                 NavigationLink(destination: ProductDetailView(product: product)) {
@@ -26,6 +30,7 @@ struct ProductsView: View {
         }
         .onAppear(perform: fetchProducts)
         .onDisappear(perform: cleanProducts)
+    
     }
     
     func cleanProducts() {

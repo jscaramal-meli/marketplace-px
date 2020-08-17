@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		316040F724EAB8B200784D81 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316040F624EAB8B200784D81 /* ProductService.swift */; };
 		316040FB24EABDAB00784D81 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316040FA24EABDAB00784D81 /* ProductsViewModel.swift */; };
 		316040FE24EAC0C400784D81 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316040FD24EAC0C400784D81 /* ViewModel.swift */; };
 		3160410024EAC0E400784D81 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316040FF24EAC0E400784D81 /* AnyViewModel.swift */; };
 		3160410424EACB7700784D81 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160410324EACB7700784D81 /* ProductsView.swift */; };
+		3160410624EB053500784D81 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160410524EB053500784D81 /* ColorHex.swift */; };
 		31C350B424E5FFA20069B667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C350B324E5FFA20069B667 /* AppDelegate.swift */; };
 		31C350B924E5FFA20069B667 /* Marketplace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C350B724E5FFA20069B667 /* Marketplace.xcdatamodeld */; };
 		31C350BD24E5FFA60069B667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C350BC24E5FFA60069B667 /* Assets.xcassets */; };
@@ -28,11 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		316040F624EAB8B200784D81 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		316040FA24EABDAB00784D81 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		316040FD24EAC0C400784D81 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		316040FF24EAC0E400784D81 /* AnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewModel.swift; sourceTree = "<group>"; };
 		3160410324EACB7700784D81 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		3160410524EB053500784D81 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		31C350B024E5FFA20069B667 /* Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C350B324E5FFA20069B667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31C350B524E5FFA20069B667 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,14 +61,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		316040F824EABA5100784D81 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				316040F624EAB8B200784D81 /* ProductService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		316040F924EABD6E00784D81 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,18 +105,17 @@
 		31C350B224E5FFA20069B667 /* Marketplace */ = {
 			isa = PBXGroup;
 			children = (
+				31C350B324E5FFA20069B667 /* AppDelegate.swift */,
+				31C350B524E5FFA20069B667 /* SceneDelegate.swift */,
 				3160410224EACB5B00784D81 /* Views */,
 				316040FC24EAC09E00784D81 /* MVVM */,
-				31C350B324E5FFA20069B667 /* AppDelegate.swift */,
 				31C6C75E24E816EC0074C435 /* Models */,
-				31C350B524E5FFA20069B667 /* SceneDelegate.swift */,
-				31C350BA24E5FFA20069B667 /* RootView.swift */,
 				316040F924EABD6E00784D81 /* ViewModels */,
-				316040F824EABA5100784D81 /* Services */,
+				31C350BA24E5FFA20069B667 /* RootView.swift */,
+				31C350CE24E607610069B667 /* SearchView.swift */,
 				31C6C76124E818710074C435 /* ProductRowView.swift */,
 				31C350D024E620960069B667 /* ProductDetailView.swift */,
-				31C6C76324E819140074C435 /* Resources */,
-				31C350CE24E607610069B667 /* SearchView.swift */,
+				31C6C76324E819140074C435 /* Supporting Files */,
 				31C350BC24E5FFA60069B667 /* Assets.xcassets */,
 				31C350C124E5FFA60069B667 /* LaunchScreen.storyboard */,
 				31C350C424E5FFA60069B667 /* Info.plist */,
@@ -151,12 +142,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		31C6C76324E819140074C435 /* Resources */ = {
+		31C6C76324E819140074C435 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				31C6C76424E819440074C435 /* productsData.json */,
+				3160410524EB053500784D81 /* ColorHex.swift */,
 			);
-			path = Resources;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,11 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C350CB24E604E70069B667 /* RootView.swift in Sources */,
+				3160410624EB053500784D81 /* ColorHex.swift in Sources */,
 				31C6C76724E81C090074C435 /* Data.swift in Sources */,
 				31C350D124E620960069B667 /* ProductDetailView.swift in Sources */,
 				31C350B424E5FFA20069B667 /* AppDelegate.swift in Sources */,
 				31C350B924E5FFA20069B667 /* Marketplace.xcdatamodeld in Sources */,
-				316040F724EAB8B200784D81 /* ProductService.swift in Sources */,
 				316040FE24EAC0C400784D81 /* ViewModel.swift in Sources */,
 				31C6C76024E8170D0074C435 /* Product.swift in Sources */,
 				3160410024EAC0E400784D81 /* AnyViewModel.swift in Sources */,
@@ -381,7 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "\"Marketplace/Preview Content\"";
 				DEVELOPMENT_TEAM = D42KX94VLB;
 				ENABLE_PREVIEWS = YES;
@@ -390,7 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jkdev.Marketplace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -403,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "\"Marketplace/Preview Content\"";
 				DEVELOPMENT_TEAM = D42KX94VLB;
 				ENABLE_PREVIEWS = YES;
@@ -412,7 +404,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jkdev.Marketplace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

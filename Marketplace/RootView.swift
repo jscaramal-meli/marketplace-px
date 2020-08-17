@@ -8,20 +8,11 @@
 
 import SwiftUI
 
-struct RootView: View {
-    @State private var searchText : String = ""
-    
+struct RootView: View {    
     var body: some View {
         NavigationView {
-            HStack(alignment: .center, spacing: 20) {
-                SearchView(text: $searchText)
-                
-                NavigationLink(destination: ProductsView(searchText: $searchText)) {
-                   Text("Buscar")
-                }.buttonStyle(DefaultButtonStyle())
-                    .padding(.trailing, 20)
-                
-            }
+            SearchView()
+                .navigationBarTitle("", displayMode: .inline)
         }
     }
 }

@@ -8,15 +8,24 @@
 
 import SwiftUI
 
+
+
 struct ProductRowView: View {
     
     var product : Product
     
     var body: some View {
-        HStack {
+        VStack(alignment: .leading, spacing: 8) {
             Text(product.title)
-            Spacer()
-            Text("$\(product.price)")
+                .padding(.top, 16)
+                .padding(.leading, 16)
+                .font(.system(size: 22))
+                .foregroundColor(Color.init(hex: "00171F"))
+            
+            Text("$\(self.product.stringPrice ?? "0")")
+                .padding(.leading, 16)
+                .font(.system(size: 36))
+                .foregroundColor(Color.init(hex: "007EA7"))
         }
     }
 }
