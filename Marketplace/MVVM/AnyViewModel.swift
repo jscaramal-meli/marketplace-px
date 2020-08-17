@@ -9,13 +9,24 @@
 import Combine
 import Foundation
 
+extension AnyViewModel: Identifiable where State: Identifiable {
+    var id: State.ID {
+        state.id
+    }
+}
+
+@dynamicMemberLookup
 final class AnyViewModel<State, Input>: ViewModel {
+
+    // MARK: Stored properties
 
     private let wrappedObjectWillChange: () -> AnyPublisher<Void, Never>
     private let wrappedState: () -> State
     private let wrappedTrigger: (Input) -> Void
 
-    var objectWillChange: some Publisher {
+    // MARK: Computed properties
+
+    var objectWillChange: AnyPublisher<Void, Never> {
         wrappedObjectWillChange()
     }
 
@@ -23,9 +34,17 @@ final class AnyViewModel<State, Input>: ViewModel {
         wrappedState()
     }
 
+    // MARK: Methods
+
     func trigger(_ input: Input) {
         wrappedTrigger(input)
     }
+
+    subscript<Value>(dynamicMember keyPath: KeyPath<State, Value>) -> Value {
+        state[keyPath: keyPath]
+    }
+
+    // MARK: Initialization
 
     init<V: ViewModel>(_ viewModel: V) where V.State == State, V.Input == Input {
         self.wrappedObjectWillChange = { viewModel.objectWillChange.eraseToAnyPublisher() }
@@ -34,3 +53,4 @@ final class AnyViewModel<State, Input>: ViewModel {
     }
 
 }
+

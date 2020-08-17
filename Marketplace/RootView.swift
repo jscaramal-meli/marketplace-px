@@ -16,7 +16,7 @@ struct RootView: View {
             HStack(alignment: .center, spacing: 20) {
                 SearchView(text: $searchText)
                 
-                NavigationLink(destination: ProductListView(searchText: $searchText)) {
+                NavigationLink(destination: ProductsView(searchText: $searchText)) {
                    Text("Buscar")
                 }.buttonStyle(DefaultButtonStyle())
                     .padding(.trailing, 20)

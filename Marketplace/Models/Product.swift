@@ -10,4 +10,5 @@ struct Product : Codable, Identifiable {
     var id: String
     var title: String
     var price: Float
+    var description: String?
 }
