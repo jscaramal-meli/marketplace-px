@@ -6,8 +6,9 @@
 //  Copyright © 2020 jkdev. All rights reserved.
 //
 
-struct Product : Codable, Identifiable {
+struct ProductDetail : Codable, Identifiable {
     var id: String
     var title: String
     var price: Float
+    var description: String
 }
