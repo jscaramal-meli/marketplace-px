@@ -38,9 +38,7 @@ struct ProductsView: View {
     }
     
     func fetchProducts() {
-        print("Sending bound search text: \(searchText)")
         viewModel.state.searchText.send(self.searchText)
-        print("Now state search text is: \(viewModel.state.searchText.value)")
         viewModel.trigger(.fetchProducts)
     }
 }

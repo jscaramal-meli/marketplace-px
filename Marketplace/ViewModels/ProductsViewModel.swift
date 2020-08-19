@@ -58,35 +58,26 @@ class ProductsViewModel : ViewModel {
         
         print("Fetching \(searchText.value)")
         
-        guard let safeSearchText = searchText.value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed), let url = URL(string: "https://api.mercadolibre.com/sites/MLA/search?q=\(safeSearchText)") else {
-           print("Invalid URL")
-           return
+        // Fetching products from API
+        ProductsService.fetchProducts(searchText: searchText.value) { products, error in
+            
+            guard let products = products else {
+                return print("Error fetching products")
+            }
+            
+            var newProducts : [Product] = []
+            
+            // Applying transformation logic after fetching
+            for product in products {
+                newProducts.append(Product(id: product.id, title: product.title, price: product.price, stringPrice: String(format: "%.2f", product.price)))
+            }
+            
+            // Changing state with .loaded value for modelState
+            self.state.changeViewModelState(newViewModelState: .loaded)
+            // Changing state adding recently fetched products
+            self.state.changeProducts(newProducts: newProducts)
+          
         }
-
-        let request = URLRequest(url: url)
-
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-               return print("No data retreived from server, error: \(error?.localizedDescription ?? "Unknown error")")
-            }
-
-            guard let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) else {
-               return print ("Error decoding JSON response")
-            }
-            
-            var results : [Product] = []
-            
-            for result in decodedResponse.results {
-                results.append(Product(id: result.id, title: result.title, price: result.price, stringPrice: String(format: "%.2f", result.price)))
-            }
-
-            //self.state = ProductsState(products: decodedResponse.results, dataState: .loaded, searchText: searchText)
-            DispatchQueue.main.async {
-                self.state.changeViewModelState(newViewModelState: .loaded)
-                self.state.changeProducts(newProducts: results)
-            }
-        }.resume()
-        
     }
     
     func trigger(_ input: ProductsInput) {
@@ -95,13 +86,7 @@ class ProductsViewModel : ViewModel {
             self.fetchProducts(searchText: self.state.searchText)
         case .cleanProducts:
             self.state.changeProducts(newProducts: [])
-        default:
-            print("Uninmplemented function")
         }
     }
-}
-
-struct Response: Codable {
-    var results: [Product]
 }
 
