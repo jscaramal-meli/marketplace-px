@@ -13,6 +13,8 @@
 		3160410424EACB7700784D81 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160410324EACB7700784D81 /* ProductsView.swift */; };
 		3160410624EB053500784D81 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160410524EB053500784D81 /* ColorHex.swift */; };
 		318E0EF424ED347D00B56603 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318E0EF324ED347D00B56603 /* ProductsService.swift */; };
+		319A274524EEA02A0083B7A3 /* MarketplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319A274424EEA02A0083B7A3 /* MarketplaceTests.swift */; };
+		319A274C24EEA0570083B7A3 /*  ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319A273C24EE9FCE0083B7A3 /*  ProductsServiceTests.swift */; };
 		31C350B424E5FFA20069B667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C350B324E5FFA20069B667 /* AppDelegate.swift */; };
 		31C350B924E5FFA20069B667 /* Marketplace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C350B724E5FFA20069B667 /* Marketplace.xcdatamodeld */; };
 		31C350BD24E5FFA60069B667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C350BC24E5FFA60069B667 /* Assets.xcassets */; };
@@ -26,7 +28,24 @@
 		31C6C76224E818710074C435 /* ProductRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6C76124E818710074C435 /* ProductRowView.swift */; };
 		31C6C76524E819440074C435 /* productsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C6C76424E819440074C435 /* productsData.json */; };
 		31C6C76724E81C090074C435 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6C76624E81C090074C435 /* Data.swift */; };
+		31F792EC24F295C50098E157 /* EmptyProductsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 31F792EB24F295C50098E157 /* EmptyProductsMock.json */; };
+		31F792EE24F296770098E157 /* SomeProductsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 31F792ED24F296770098E157 /* SomeProductsMock.json */; };
+		31F792F024F297080098E157 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F792EF24F297080098E157 /* URLProtocolMock.swift */; };
+		31F792F124F2A8F10098E157 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318E0EF324ED347D00B56603 /* ProductsService.swift */; };
+		31F792F224F2A91C0098E157 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6C75F24E8170D0074C435 /* Product.swift */; };
+		31F792F524F2ACA50098E157 /* SomeProductsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 31F792ED24F296770098E157 /* SomeProductsMock.json */; };
+		31F792F624F2ACA70098E157 /* EmptyProductsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 31F792EB24F295C50098E157 /* EmptyProductsMock.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		319A274724EEA02A0083B7A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31C350A824E5FFA20069B667 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31C350AF24E5FFA20069B667;
+			remoteInfo = Marketplace;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		316040FA24EABDAB00784D81 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
@@ -35,6 +54,10 @@
 		3160410324EACB7700784D81 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		3160410524EB053500784D81 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		318E0EF324ED347D00B56603 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		319A273C24EE9FCE0083B7A3 /*  ProductsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ProductsServiceTests.swift"; sourceTree = "<group>"; };
+		319A274224EEA02A0083B7A3 /* MarketplaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		319A274424EEA02A0083B7A3 /* MarketplaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceTests.swift; sourceTree = "<group>"; };
+		319A274624EEA02A0083B7A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31C350B024E5FFA20069B667 /* Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C350B324E5FFA20069B667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31C350B524E5FFA20069B667 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,9 +73,19 @@
 		31C6C76124E818710074C435 /* ProductRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRowView.swift; sourceTree = "<group>"; };
 		31C6C76424E819440074C435 /* productsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = productsData.json; sourceTree = "<group>"; };
 		31C6C76624E81C090074C435 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		31F792EB24F295C50098E157 /* EmptyProductsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyProductsMock.json; sourceTree = "<group>"; };
+		31F792ED24F296770098E157 /* SomeProductsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SomeProductsMock.json; sourceTree = "<group>"; };
+		31F792EF24F297080098E157 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		319A273F24EEA02A0083B7A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31C350AD24E5FFA20069B667 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,10 +129,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		319A274324EEA02A0083B7A3 /* MarketplaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				319A274424EEA02A0083B7A3 /* MarketplaceTests.swift */,
+				31F792EA24F295770098E157 /* Mocks */,
+				319A273C24EE9FCE0083B7A3 /*  ProductsServiceTests.swift */,
+				319A274624EEA02A0083B7A3 /* Info.plist */,
+			);
+			path = MarketplaceTests;
+			sourceTree = "<group>";
+		};
 		31C350A724E5FFA20069B667 = {
 			isa = PBXGroup;
 			children = (
 				31C350B224E5FFA20069B667 /* Marketplace */,
+				319A274324EEA02A0083B7A3 /* MarketplaceTests */,
 				31C350B124E5FFA20069B667 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				31C350B024E5FFA20069B667 /* Marketplace.app */,
+				319A274224EEA02A0083B7A3 /* MarketplaceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,9 +208,37 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		31F792EA24F295770098E157 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				31F792EB24F295C50098E157 /* EmptyProductsMock.json */,
+				31F792ED24F296770098E157 /* SomeProductsMock.json */,
+				31F792EF24F297080098E157 /* URLProtocolMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		319A274124EEA02A0083B7A3 /* MarketplaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 319A274924EEA02A0083B7A3 /* Build configuration list for PBXNativeTarget "MarketplaceTests" */;
+			buildPhases = (
+				319A273E24EEA02A0083B7A3 /* Sources */,
+				319A273F24EEA02A0083B7A3 /* Frameworks */,
+				319A274024EEA02A0083B7A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				319A274824EEA02A0083B7A3 /* PBXTargetDependency */,
+			);
+			name = MarketplaceTests;
+			productName = MarketplaceTests;
+			productReference = 319A274224EEA02A0083B7A3 /* MarketplaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		31C350AF24E5FFA20069B667 /* Marketplace */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31C350C724E5FFA60069B667 /* Build configuration list for PBXNativeTarget "Marketplace" */;
@@ -192,6 +266,10 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = jkdev;
 				TargetAttributes = {
+					319A274124EEA02A0083B7A3 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 31C350AF24E5FFA20069B667;
+					};
 					31C350AF24E5FFA20069B667 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -211,17 +289,29 @@
 			projectRoot = "";
 			targets = (
 				31C350AF24E5FFA20069B667 /* Marketplace */,
+				319A274124EEA02A0083B7A3 /* MarketplaceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		319A274024EEA02A0083B7A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31F792EC24F295C50098E157 /* EmptyProductsMock.json in Resources */,
+				31F792EE24F296770098E157 /* SomeProductsMock.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31C350AE24E5FFA20069B667 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				31C350C324E5FFA60069B667 /* LaunchScreen.storyboard in Resources */,
 				31C350C024E5FFA60069B667 /* Preview Assets.xcassets in Resources */,
+				31F792F524F2ACA50098E157 /* SomeProductsMock.json in Resources */,
+				31F792F624F2ACA70098E157 /* EmptyProductsMock.json in Resources */,
 				31C350BD24E5FFA60069B667 /* Assets.xcassets in Resources */,
 				31C6C76524E819440074C435 /* productsData.json in Resources */,
 			);
@@ -230,6 +320,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		319A273E24EEA02A0083B7A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31F792F024F297080098E157 /* URLProtocolMock.swift in Sources */,
+				31F792F124F2A8F10098E157 /* ProductsService.swift in Sources */,
+				31F792F224F2A91C0098E157 /* Product.swift in Sources */,
+				319A274C24EEA0570083B7A3 /*  ProductsServiceTests.swift in Sources */,
+				319A274524EEA02A0083B7A3 /* MarketplaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31C350AC24E5FFA20069B667 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +356,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		319A274824EEA02A0083B7A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31C350AF24E5FFA20069B667 /* Marketplace */;
+			targetProxy = 319A274724EEA02A0083B7A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		31C350C124E5FFA60069B667 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -266,6 +376,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		319A274A24EEA02A0083B7A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D42KX94VLB;
+				INFOPLIST_FILE = MarketplaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkdev.MarketplaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marketplace.app/Marketplace";
+			};
+			name = Debug;
+		};
+		319A274B24EEA02A0083B7A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D42KX94VLB;
+				INFOPLIST_FILE = MarketplaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkdev.MarketplaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marketplace.app/Marketplace";
+			};
+			name = Release;
+		};
 		31C350C524E5FFA60069B667 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -427,6 +577,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		319A274924EEA02A0083B7A3 /* Build configuration list for PBXNativeTarget "MarketplaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				319A274A24EEA02A0083B7A3 /* Debug */,
+				319A274B24EEA02A0083B7A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		31C350AB24E5FFA20069B667 /* Build configuration list for PBXProject "Marketplace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -19,16 +19,28 @@ enum ProductsServiceError : Error {
     case errorDecodingJSON
 }
 
-struct ProductsService {
-    static func fetchProducts (searchText: String, completion: @escaping ([Product]?, Error?) -> Void) {
+protocol ProductsServiceProtocol {
+    func fetchProducts(searchText: String, completion: @escaping ([Product]?, Error?) -> Void)
+}
+
+struct ProductsService : ProductsServiceProtocol {
+    var session: URLSession
+    
+    static let baseURL = "https://api.mercadolibre.com/sites/MLA/search"
+    
+    init(session: URLSession) {
+        self.session = session
+    }
+    
+    func fetchProducts (searchText: String, completion: @escaping ([Product]?, Error?) -> Void) {
         
-        // Ensuring safe search string replacing whitespaces with %20
+        // Ensuring safe search string replacing not allowed characters
         guard let safeSearchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
              return completion(nil, ProductsServiceError.invalidSearchText)//print("Invalid search text")
         }
         
         // Creating url from baseURL + queryString
-        guard let url = URL(string: "https://api.mercadolibre.com/sites/MLA/search?q=\(safeSearchText)") else {
+        guard let url = URL(string: "\(ProductsService.baseURL)?q=\(safeSearchText)") else {
             return completion(nil, ProductsServiceError.invalidURL)//print("Invalid URL")
         }
 
@@ -36,7 +48,7 @@ struct ProductsService {
         let request = URLRequest(url: url)
 
         // Triggering request through sharedInstance of URLSession
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        session.dataTask(with: request) { data, response, error in
             // Handling response
             
             // Ensuring unwrapping received data

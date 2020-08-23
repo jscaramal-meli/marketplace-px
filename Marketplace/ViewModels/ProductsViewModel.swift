@@ -50,8 +50,12 @@ enum ProductsInput {
 class ProductsViewModel : ViewModel {
     @Published var state: ProductsState
     
+    var productsService : ProductsService
+    
     init(state: ProductsState) {
         self.state = state
+        
+        self.productsService = ProductsService.init(session: URLSession.shared)
     }
     
     func fetchProducts(searchText: CurrentValueSubject<String, Never>) {
@@ -59,7 +63,7 @@ class ProductsViewModel : ViewModel {
         print("Fetching \(searchText.value)")
         
         // Fetching products from API
-        ProductsService.fetchProducts(searchText: searchText.value) { products, error in
+        productsService.fetchProducts(searchText: searchText.value) { products, error in
             
             guard let products = products else {
                 return print("Error fetching products")
