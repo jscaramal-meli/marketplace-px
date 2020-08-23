@@ -17,6 +17,8 @@ enum ModelDataState: Equatable {
             return true
         case (.loading, .loading):
             return true
+        case (.loaded, .loaded):
+            return true
         default:
             return false
         }
@@ -50,17 +52,20 @@ enum ProductsInput {
 class ProductsViewModel : ViewModel {
     @Published var state: ProductsState
     
-    var productsService : ProductsService
+    var productsService : ProductsServiceProtocol
     
-    init(state: ProductsState) {
+    init(state: ProductsState, productsService: ProductsServiceProtocol = ProductsService(session: URLSession.shared)) {
         self.state = state
         
-        self.productsService = ProductsService.init(session: URLSession.shared)
+        self.productsService = productsService
     }
     
     func fetchProducts(searchText: CurrentValueSubject<String, Never>) {
         
         print("Fetching \(searchText.value)")
+        
+        // Changing state with .loading value for modelState
+        self.state.changeViewModelState(newViewModelState: .loading)
         
         // Fetching products from API
         productsService.fetchProducts(searchText: searchText.value) { products, error in

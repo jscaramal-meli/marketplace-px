@@ -44,7 +44,7 @@ class ProductsServiceTests: XCTestCase {
         let url = URL(string: "\(ProductsService.baseURL)?q=empty%20list")
         
         // attach that to some fixed filename in our protocol handler
-        URLProtocolMock.testURLs = [url: "EmptyProductsMock"]
+        URLProtocolMock.testURLs = [url: "EmptyProductsAPIResponseMock"]
 
         // now set up a configuration to use our mock
         let config = URLSessionConfiguration.ephemeral
@@ -78,7 +78,7 @@ class ProductsServiceTests: XCTestCase {
         let url = URL(string: "\(ProductsService.baseURL)?q=iPhone")
         
         // attach that to some fixed filename in our protocol handler
-        URLProtocolMock.testURLs = [url: "SomeProductsMock"]
+        URLProtocolMock.testURLs = [url: "SomeProductsAPIResponseMock"]
 
         // now set up a configuration to use our mock
         let config = URLSessionConfiguration.ephemeral
