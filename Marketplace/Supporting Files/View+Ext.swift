@@ -6,4 +6,8 @@
 //  Copyright © 2020 jkdev. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+
+extension View {
+    func eraseToAnyView() -> AnyView { AnyView(self) }
+}

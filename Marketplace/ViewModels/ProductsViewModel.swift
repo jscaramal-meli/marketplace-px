@@ -29,6 +29,10 @@ enum ModelDataState: Equatable {
     case error(Error)
 }
 
+enum ProductsViewModelError : Error {
+    case errorFetchingProducts
+}
+
 
 struct ProductsState {
     var products: [Product] = []
@@ -62,6 +66,15 @@ class ProductsViewModel : ViewModel {
     
     func fetchProducts(searchText: CurrentValueSubject<String, Never>) {
         
+        switch self.state.dataState {
+        case .idle:
+            // If it's on idle state then fetch products
+            break
+        default:
+            // Else don't
+            return
+        }
+        
         print("Fetching \(searchText.value)")
         
         // Changing state with .loading value for modelState
@@ -71,7 +84,7 @@ class ProductsViewModel : ViewModel {
         productsService.fetchProducts(searchText: searchText.value) { products, error in
             
             guard let products = products else {
-                return print("Error fetching products")
+                return self.state.changeViewModelState(newViewModelState: .error(ProductsViewModelError.errorFetchingProducts))
             }
             
             var newProducts : [Product] = []
@@ -89,13 +102,17 @@ class ProductsViewModel : ViewModel {
         }
     }
     
+    func cleanProducts () {
+        self.state.changeViewModelState(newViewModelState: .idle)
+        self.state.changeProducts(newProducts: [])
+    }
+    
     func trigger(_ input: ProductsInput) {
         switch input {
         case .fetchProducts:
             self.fetchProducts(searchText: self.state.searchText)
         case .cleanProducts:
-            self.state.changeProducts(newProducts: [])
+            self.cleanProducts()
         }
     }
 }
-

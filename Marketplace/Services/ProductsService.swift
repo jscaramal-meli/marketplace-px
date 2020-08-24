@@ -36,12 +36,16 @@ struct ProductsService : ProductsServiceProtocol {
         
         // Ensuring safe search string replacing not allowed characters
         guard let safeSearchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
-             return completion(nil, ProductsServiceError.invalidSearchText)//print("Invalid search text")
+            return DispatchQueue.main.async {
+                return completion(nil, ProductsServiceError.invalidSearchText)//print("Invalid search text")
+            }
         }
         
         // Creating url from baseURL + queryString
         guard let url = URL(string: "\(ProductsService.baseURL)?q=\(safeSearchText)") else {
-            return completion(nil, ProductsServiceError.invalidURL)//print("Invalid URL")
+            return DispatchQueue.main.async {
+                completion(nil, ProductsServiceError.invalidURL)//print("Invalid URL")
+            }
         }
 
         // Creating request from URL
@@ -53,12 +57,16 @@ struct ProductsService : ProductsServiceProtocol {
             
             // Ensuring unwrapping received data
             guard let data = data else {
-                return completion(nil, ProductsServiceError.noData)//print("No data retreived from server, error: \(error?.localizedDescription ?? "Unknown error")")
+                return DispatchQueue.main.async {
+                    completion(nil, ProductsServiceError.noData)//print("No data retreived from server, error: \(error?.localizedDescription ?? "Unknown error")")
+                }
             }
 
             // Ensuring decoding JSON from response data using Response as type
             guard let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) else {
-                return completion(nil, ProductsServiceError.errorDecodingJSON)//print("Error decoding JSON response")
+                return DispatchQueue.main.async {
+                    completion(nil, ProductsServiceError.errorDecodingJSON)//print("Error decoding JSON response")
+                }
             }
             
             // Dispatching completion handler on main thread

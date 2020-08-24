@@ -29,8 +29,9 @@ struct SearchView: View {
                 .padding(.horizontal, 16)
                 .foregroundColor(Color.init(hex: "007EA7"))
             
-            TextField("   Buscar...", text: self.$searchText)
-            .padding(7)
+            TextField("Buscar...", text: self.$searchText)
+            .padding(8)
+            .padding(.horizontal, 16)
             .background(Color(.systemGray6))
             .font(.system(size: 18))
             .cornerRadius(20)

@@ -16,21 +16,53 @@ struct ProductsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text(self.searchText)
-                .padding(.top, 16)
-                .padding(.leading, 16)
-                .font(.system(size: 40))
-                .foregroundColor(Color.init(hex: "003459"))
-            
-            List(self.viewModel.state.products) { product in
-                NavigationLink(destination: ProductDetailView(product: product)) {
-                    ProductRowView(product: product)
-                }
+            HStack {
+                Text(self.searchText)
+                    .padding(.top, 16)
+                    .padding(.leading, 16)
+                    .font(.system(size: 40))
+                    .foregroundColor(Color.init(hex: "003459"))
+                Spacer()
             }
+            
+                        
+            content
+
         }
+        .frame(maxWidth: .infinity)
+        .frame(alignment: .leading)
         .onAppear(perform: fetchProducts)
         .onDisappear(perform: cleanProducts)
     
+    }
+    
+    private var content: some View {
+        switch viewModel.state.dataState {
+        case .idle:
+            return Color.clear.eraseToAnyView()
+        case .loading:
+            return
+                VStack {
+                    Spacer()
+                    Text("Estamos buscando tu producto")
+                    Spacer()
+                }
+            .frame(maxWidth: .infinity).eraseToAnyView()
+        case .error( _):
+        return
+            VStack {
+                Spacer()
+                Text("Oops, algo salió mal!")
+                Spacer()
+            }
+            .frame(maxWidth: .infinity).eraseToAnyView()
+        case .loaded:
+            return List(self.viewModel.state.products) { product in
+                NavigationLink(destination: ProductDetailView(product: product)) {
+                    ProductRowView(product: product)
+                }
+            }.eraseToAnyView()
+        }
     }
     
     func cleanProducts() {
@@ -45,6 +77,7 @@ struct ProductsView: View {
 
 struct ProductsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsView(searchText: .constant("Search example"))
+        let preview = ProductsView(searchText: .constant("Search example"))
+        return preview
     }
 }
